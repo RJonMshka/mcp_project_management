@@ -1,0 +1,36 @@
+{
+  "name": "project-management-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for project and task management using Bun",
+  "main": "mcp_server.ts",
+  "type": "module",
+  "scripts": {
+    "start": "bun run mcp_server.ts",
+    "dev": "bun --watch mcp_server.ts",
+    "build": "bun build mcp_server.ts --outdir ./dist --target bun",
+    "install-deps": "bun install"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "project-management",
+    "task-management",
+    "bun"
+  ],
+  "author": "Rajat Kumar",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "latest",
+    "pg": "^8.11.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/pg": "^8.11.0"
+  },
+  "engines": {
+    "bun": ">=1.0.0"
+  },
+  "bin": {
+    "project-mcp-server": "./mcp_server.ts"
+  }
+}
