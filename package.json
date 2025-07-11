@@ -2,13 +2,19 @@
   "name": "project-management-mcp-server",
   "version": "1.0.0",
   "description": "MCP server for project and task management using Bun",
-  "main": "mcp_server.ts",
+  "main": "src/servers/mcp_server.ts",
   "type": "module",
   "scripts": {
-    "start": "bun run mcp_server.ts",
-    "dev": "bun --watch mcp_server.ts",
-    "build": "bun build mcp_server.ts --outdir ./dist --target bun",
-    "install-deps": "bun install"
+    "start": "bun run src/servers/mcp_server.ts",
+    "dev": "bun --watch src/servers/mcp_server.ts",
+    "build": "bun build src/servers/mcp_server.ts --outdir ./dist --target bun",
+    "install-deps": "bun install",
+    "graphql:start": "bun run src/servers/graphql_server.ts",
+    "graphql:dev": "bun --watch src/servers/graphql_server.ts",
+    "graphql:build": "bun build src/servers/graphql_server.ts --outdir ./dist-graphql --target bun",
+    "test": "bun run tests/test_server.ts",
+    "test:graphql": "node tests/test_detailed_query.js",
+    "test:db": "bun run tests/test_database.ts"
   },
   "keywords": [
     "mcp",
@@ -20,17 +26,23 @@
   "author": "Rajat Kumar",
   "license": "MIT",
   "dependencies": {
+    "@graphql-tools/schema": "^10.0.23",
     "@modelcontextprotocol/sdk": "latest",
+    "cors": "^2.8.5",
+    "graphql": "^16.8.1",
+    "graphql-tag": "^2.12.6",
+    "graphql-yoga": "^5.1.1",
     "pg": "^8.11.0"
   },
   "devDependencies": {
     "@types/bun": "latest",
-    "@types/pg": "^8.11.0"
+    "@types/pg": "^8.11.0",
+    "@types/cors": "^2.8.17"
   },
   "engines": {
     "bun": ">=1.0.0"
   },
   "bin": {
-    "project-mcp-server": "./mcp_server.ts"
+    "project-mcp-server": "./src/servers/mcp_server.ts"
   }
 }
