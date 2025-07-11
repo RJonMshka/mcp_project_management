@@ -11,7 +11,8 @@ project-management-mcp-server/
 │   │   ├── mcp_server.ts       # MCP protocol server
 │   │   └── graphql_server.ts   # GraphQL API server
 │   ├── graphql/
-│   │   └── resolvers.ts        # GraphQL resolvers
+│   │   ├── resolvers.ts        # GraphQL resolvers
+│   │   └── schema.ts           # GraphQL schema definitions
 │   └── shared/
 │       └── database-service.ts # Shared database operations
 ├── tests/

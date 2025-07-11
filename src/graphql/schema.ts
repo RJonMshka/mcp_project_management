@@ -1,6 +1,5 @@
-import { buildSchema } from 'graphql';
-
-export const schema = buildSchema(`
+// GraphQL Schema Definition
+export const typeDefs = `
   # Scalar types
   scalar DateTime
 
@@ -204,4 +203,4 @@ export const schema = buildSchema(`
     projectCreated: Project!
     taskCreated: Task!
   }
-`);
+`;

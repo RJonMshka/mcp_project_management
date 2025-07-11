@@ -10,13 +10,13 @@ async function runTest(testName: string, command: string[]): Promise<boolean> {
   console.log(`Command: ${command.join(' ')}`);
   
   try {
-    const process = spawn(command[0], command.slice(1), {
+    const childProcess = spawn(command[0], command.slice(1), {
       stdio: 'inherit',
       cwd: process.cwd()
     });
     
     return new Promise((resolve) => {
-      process.on('exit', (code) => {
+      childProcess.on('exit', (code) => {
         if (code === 0) {
           console.log(`✅ ${testName} passed`);
           resolve(true);
