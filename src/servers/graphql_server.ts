@@ -23,8 +23,8 @@ const yoga = createYoga({
   cors: {
     origin: process.env.NODE_ENV === 'production' 
       ? ['https://your-frontend-domain.com', 'https://your-mobile-app.com']
-      : '*',
-    credentials: process.env.NODE_ENV === 'production',
+      : ['http://localhost:3000', 'http://127.0.0.1:3000'],
+    credentials: true,
   },
   context: ({ request }) => ({
     request,
